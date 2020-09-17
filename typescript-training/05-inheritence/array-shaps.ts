@@ -1,0 +1,11 @@
+import { Rectangle } from "./rectancgle";
+import { Circle } from "./circle";
+import { Shape } from "./shape";
+const shapes: Shape[] = [];
+const simpleShape = new Shape(1, 2);
+const circle = new Circle(10, 10, 120);
+const rectangle = new Rectangle(10, 10, 120, 120);
+shapes.push(simpleShape);
+shapes.push(circle);
+shapes.push(rectangle);
+shapes.forEach((shape) => console.log(shape.getInfo()));
