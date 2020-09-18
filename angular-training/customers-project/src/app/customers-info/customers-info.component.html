@@ -1,0 +1,26 @@
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Sales</th>
+      <th>Quata</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let customer of cutomers"
+      [ngClass]="{ heiglight: customer.sales >= 200 }"
+    >
+      <td>{{ customer.firstName }}</td>
+      <td>{{ customer.lastName }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.sales | currency: "EUR" }}</td>
+      <td>
+        <span *ngIf="customer.sales >= 200; else noQuata">Yes</span>
+        <ng-template #noQuata>No</ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>
